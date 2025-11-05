@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JJ Comtech - Expert Electronics Repair | Oklahoma City</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1a5490;
+            --dark-blue: #0d3a66;
+            --accent-orange: #ff6b35;
+            --light-gray: #f5f5f5;
+            --text-dark: #333333;
+            --text-light: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Top Phone Bar */
+        .phone-bar {
+            background-color: var(--dark-blue);
+            color: var(--text-light);
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .phone-bar a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .phone-bar a:hover {
+            color: var(--accent-orange);
+        }
+
+        /* Hero Section - Full Screen */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--text-light);
+            padding: 20px;
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('JJ-comtech.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.15;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-orange);
+            color: var(--text-light);
+            padding: 18px 40px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            background-color: #e55a2b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--text-light);
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Content Sections */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: var(--light-gray);
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-left-color: var(--accent-orange);
+        }
+
+        .service-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Hours Section */
+        .hours-container {
+            background: var(--light-gray);
+            padding: 40px;
+            margin-top: 40px;
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .day-hours {
+            padding: 15px;
+            background: white;
+            border-left: 3px solid var(--primary-blue);
+        }
+
+        .day-hours strong {
+            color: var(--primary-blue);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Reviews Section */
+        .reviews-container {
+            margin-top: 40px;
+        }
+
+        .review-card {
+            background: var(--light-gray);
+            padding: 30px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-orange);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+        }
+
+        .stars {
+            color: var(--accent-orange);
+            font-size: 1.2rem;
+        }
+
+        .review-body {
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .show-more-btn {
+            display: block;
+            margin: 30px auto;
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            padding: 15px 40px;
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .show-more-btn:hover {
+            background-color: var(--dark-blue);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Map Section */
+        .map-container {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            max-width: 900px;
+            height: 450px;
+            border: 3px solid var(--primary-blue);
+        }
+
+        .map-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .map-link:hover {
+            color: var(--accent-orange);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 700px;
+            margin: 40px auto;
+            background: var(--light-gray);
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            background-color: var(--accent-orange);
+            color: var(--text-light);
+            padding: 15px 50px;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background-color: #e55a2b;
+        }
+
+        /* Square Payment Section */
+        .square-section {
+            background: var(--light-gray);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .square-link {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            padding: 20px 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+
+        .square-link:hover {
+            background-color: var(--dark-blue);
+            transform: translateY(-2px);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background-color: var(--accent-orange);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-blue);
+            color: var(--text-light);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .phone-bar {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container iframe {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Phone Bar -->
+    <div class="phone-bar">
+        <a href="tel:+14056331727">📞 (405) 633-1727 - Call Now</a>
+    </div>
+
+    <!-- Hero Section - Full Screen -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1>JJ COMTECH</h1>
+            <p>Expert Electronics Repair & Technology Solutions</p>
+            <a href="#contact" class="cta-button">Get Your Free Quote</a>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Computer Repair</h3>
+                <p>Expert diagnostics and repairs for all computer issues. Fast turnaround times guaranteed.</p>
+            </div>
+            <div class="service-card">
+                <h3>Phone Repair</h3>
+                <p>Screen replacements, battery repairs, and more for all smartphone models.</p>
+            </div>
+            <div class="service-card">
+                <h3>Data Recovery</h3>
+                <p>Professional data recovery services to retrieve your important files and documents.</p>
+            </div>
+            <div class="service-card">
+                <h3>Electronics Repair</h3>
+                <p>Comprehensive repair services for tablets, laptops, and other electronic devices.</p>
+            </div>
+            <div class="service-card">
+                <h3>Tech Support</h3>
+                <p>Expert technical support and consultation for all your technology needs.</p>
+            </div>
+            <div class="service-card">
+                <h3>Custom Solutions</h3>
+                <p>Tailored technology solutions designed specifically for your requirements.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours Section -->
+    <section id="hours">
+        <h2>Business Hours</h2>
+        <div class="hours-container">
+            <div class="hours-grid">
+                <div class="day-hours">
+                    <strong>Monday</strong>
+                    <span>11 AM – 8 PM</span>
+                </div>
+                <div class="day-hours">
+                    <strong>Tuesday</strong>
+                    <span>11 AM – 8 PM</span>
+                </div>
+                <div class="day-hours">
+                    <strong>Wednesday</strong>
+                    <span>11 AM – 8 PM</span>
+                </div>
+                <div class="day-hours">
+                    <strong>Thursday</strong>
+                    <span>11 AM – 8 PM</span>
+                </div>
+                <div class="day-hours">
+                    <strong>Friday</strong>
+                    <span>11 AM – 8 PM</span>
+                </div>
+                <div class="day-hours">
+                    <strong>Saturday</strong>
+                    <span>11 AM – 8 PM</span>
+                </div>
+                <div class="day-hours">
+                    <strong>Sunday</strong>
+                    <span>Closed</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews">
+        <h2>Customer Reviews</h2>
+        <div class="reviews-container" id="reviewsContainer"></div>
+        <button class="show-more-btn" id="showMoreBtn" style="display: none;">Show More Reviews</button>
+    </section>
+
+    <!-- Square Payment Section -->
+    <section class="square-section">
+        <h2>Pay Online</h2>
+        <p>Convenient and secure online payment options available</p>
+        <a href="https://squareup.com/appointments/book/YOUR_LOCATION_ID" class="square-link" target="_blank">Pay with Square</a>
+        <p style="margin-top: 20px; color: #666; font-size: 0.9rem;">Replace YOUR_LOCATION_ID in the code with your actual Square location ID</p>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location">
+        <h2>Visit Us</h2>
+        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 20px;">
+            <strong>1549 SW 44th St, Oklahoma City, OK 73119</strong>
+        </p>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3251.364732886996!2d-97.54779678850399!3d35.420993872558356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b2115e37770f47%3A0x4101620913bc51f4!2sJJ%20comtech!5e0!3m2!1sen!2sus!4v1762308303875!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <br>
+            <a href="https://www.google.com/maps/place/JJ+comtech/@35.4209939,-97.5477968,17z/data=!4m16!1m9!3m8!1s0x87b2115e37770f47:0x4101620913bc51f4!2sJJ+comtech!8m2!3d35.4209939!4d-97.5452165!9m1!1b1!16s%2Fg%2F11c75th2x7!3m5!1s0x87b2115e37770f47:0x4101620913bc51f4!8m2!3d35.4209939!4d-97.5452165!16s%2Fg%2F11c75th2x7?entry=ttu&g_ep=EgoyMDI1MTEwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-link">View on Google Maps →</a>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="service">Service Needed</label>
+                <input type="text" id="service" name="service" placeholder="e.g., Computer Repair, Phone Screen">
+            </div>
+            <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" required placeholder="Tell us about your repair needs..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Social Links -->
+    <section>
+        <h2>Connect With Us</h2>
+        <div class="social-links">
+            <a href="https://www.instagram.com/jjcomtech2/" target="_blank" class="social-link">Instagram</a>
+            <a href="https://www.chamberofcommerce.com/business-directory/oklahoma/oklahoma-city/electronics-repair-shop/2013642675-jj-comtech" target="_blank" class="social-link">Chamber of Commerce</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>JJ Comtech</strong></p>
+        <p>1549 SW 44th St, Oklahoma City, OK 73119</p>
+        <p><a href="tel:+14056331727" style="color: var(--text-light); text-decoration: none;">(405) 633-1727</a></p>
+        <p style="margin-top: 20px;">&copy; 2025 JJ Comtech. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Reviews Data - EASILY ADD MORE REVIEWS HERE
+        const reviews = [
+            { name: "Customer 1", rating: 5, body: "" },
+            { name: "Customer 2", rating: 5, body: "" },
+            { name: "Customer 3", rating: 5, body: "" },
+            { name: "Customer 4", rating: 5, body: "" },
+            { name: "Customer 5", rating: 5, body: "" },
+            { name: "Customer 6", rating: 5, body: "" }
+        ];
+
+        const reviewsPerPage = 6;
+        let currentReviewIndex = 0;
+
+        function displayReviews(startIndex, count) {
+            const container = document.getElementById('reviewsContainer');
+            const endIndex = Math.min(startIndex + count, reviews.length);
+
+            for (let i = startIndex; i < endIndex; i++) {
+                const review = reviews[i];
+                const reviewCard = document.createElement('div');
+                reviewCard.className = 'review-card';
+                
+                const stars = '★'.repeat(review.rating);
+                
+                reviewCard.innerHTML = `
+                    <div class="review-header">
+                        <div class="reviewer-name">${review.name}</div>
+                        <div class="stars">${stars}</div>
+                    </div>
+                    ${review.body ? `<div class="review-body">${review.body}</div>` : ''}
+                `;
+                
+                container.appendChild(reviewCard);
+            }
+
+            currentReviewIndex = endIndex;
+
+            const remainingReviews = reviews.length - currentReviewIndex;
+            const showMoreBtn = document.getElementById('showMoreBtn');
+            
+            if (remainingReviews > 0) {
+                showMoreBtn.style.display = 'block';
+                const nextBatch = Math.min(remainingReviews, reviewsPerPage);
+                showMoreBtn.textContent = `Show ${nextBatch} More Review${nextBatch > 1 ? 's' : ''} (Total ${remainingReviews})`;
+            } else {
+                showMoreBtn.style.display = 'none';
+            }
+        }
+
+        document.getElementById('showMoreBtn').addEventListener('click', function() {
+            displayReviews(currentReviewIndex, reviewsPerPage);
+        });
+
+        displayReviews(0, reviewsPerPage);
+
+        // Contact Form Handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                service: document.getElementById('service').value,
+                message: document.getElementById('message').value
+            };
+
+            const subject = encodeURIComponent('New Contact Form Submission - JJ Comtech');
+            const body = encodeURIComponent(
+                `Name: ${formData.name}\n` +
+                `Email: ${formData.email}\n` +
+                `Phone: ${formData.phone}\n` +
+                `Service: ${formData.service}\n\n` +
+                `Message:\n${formData.message}`
+            );
+
+            window.location.href = `mailto:your-email@example.com?subject=${subject}&body=${body}`;
+            
+            alert('Thank you for contacting us! Your default email client will open to send the message.');
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
