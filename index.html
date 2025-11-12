@@ -86,35 +86,40 @@ body {
     box-sizing: border-box;
 }
 
-/* Ensure hero takes exactly viewport width */
 .hero {
-    width: 100vw;           /* Use viewport width */
-    margin: 0;
-    padding: 0;
-    overflow: hidden;       /* Contain any child overflow */
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     position: relative;
+    margin-top: 44px;
+    width: 100%;
+    overflow: hidden;
 }
 
-/* Fix .hero-content padding causing overflow */
 .hero-content {
-    padding: 0 20px;
-    max-width: 100%;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
     box-sizing: border-box;
 }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            letter-spacing: -0.5px;
-        }
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
 
-        .hero p {
-            font-size: 1.35rem;
-            max-width: 700px;
-            margin-bottom: 32px;
-            opacity: 0.95;
-        }
+.hero p {
+    font-size: 1.35rem;
+    max-width: 700px;
+    margin: 0 auto 32px;
+    opacity: 0.95;
+}
 
         .cta-button {
             background-color: var(--accent-green);
@@ -501,7 +506,9 @@ body {
         <p>Professional Electronics Repair & IT Solutions in Oklahoma City</p>
         <a href="#contact" class="cta-button">Get Free Quote</a>
     </div>
-    <div class="scroll-hint">Down Arrow</div>
+    <<div class="scroll-hint">
+    <i class="fas fa-chevron-down"></i>
+</div>
 </section>
 
     <!-- Services -->
