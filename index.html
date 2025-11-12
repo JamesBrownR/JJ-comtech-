@@ -77,7 +77,7 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            height: 100%;
+            width: 100%;
             min-height: 600px;
             background: linear-gradient(rgba(29, 67, 50, 0.85), rgba(27, 67, 50, 0.9)), url('https://images.unsplash.com/photo-1581092580496-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
             display: flex;
@@ -87,7 +87,7 @@
             text-align: center;
             color: var(--white);
             padding: 0 20px;
-            margin-top: 56px;
+            
             position: relative;
         }
 
@@ -629,13 +629,227 @@
     <script>
         // Sample Reviews (Replace with real ones)
         const reviews = [
-            { name: "Sarah M.", rating: 5, body: "Fixed my MacBook in under 2 hours! Professional and affordable." },
-            { name: "James T.", rating: 5, body: "Recovered all my family photos from a dead hard drive. Lifesavers!" },
-            { name: "Maria L.", rating: 5, body: "Best phone repair in OKC. New screen looks perfect." },
-            { name: "Robert K.", rating: 5, body: "Great customer service and honest pricing. Highly recommend." },
-            { name: "Emily R.", rating: 5, body: "They fixed my gaming PC and optimized it. Runs better than new!" },
-            { name: "David P.", rating: 5, body: "Fast, friendly, and professional. Will definitely return." }
-        ];
+    {
+        "name": "George Nelson Jr.",
+        "rating": 5,
+        "body": "JJ is A-W-E-S-O-M-E!!!! I called him and told him what was going on with my TV and he told me to bring it to him and a $40 deposit to diagnose and see what the problem could be. I dropped it off and within 30 minutes, he called me back and … More"
+    },
+    {
+        "name": "kermoony",
+        "rating": 5,
+        "body": "A couple of months ago lightning hit our house and our big screen TV burnt out. JJ had it fixed in one day after he received the necessary part. … More"
+    },
+    {
+        "name": "Mai Seodara",
+        "rating": 5,
+        "body": "JJ did an outstanding job on my parent's TV. As soon as the parts were in, he got it done that same day. Excellent work with a fair price! We highly recommend. AND, he's friendly, too. 👍 😊"
+    },
+    {
+        "name": "jenna whited",
+        "rating": 5,
+        "body": "Amazing job he fixed my son's Nintendo switch lite after he let the dogs chew off the joysticks. I even was able to give him a TV I no longer used and have been trying to get rid of but no one wanted bc the HDMI ports didn't work. Very decent prices."
+    },
+    {
+        "name": "0 Oski",
+        "rating": 5,
+        "body": "Excellent service, guy was very professional. Fixed the problem same day. Great price A+ rating"
+    },
+    {
+        "name": "Caytlin Bierwirth",
+        "rating": 5,
+        "body": "Had issues and they got it fixed for us as fast as they could. Affordable! Fast results!"
+    },
+    {
+        "name": "Dalton gaming Adkisson",
+        "rating": 5,
+        "body": "JJ was able to help me get a circuit board repaired for my daughter‘s car in less than an hour and very reasonably priced when I compared to elsewhere."
+    },
+    {
+        "name": "Mark A. Lowry",
+        "rating": 5,
+        "body": "Justice had a large repaired, used smart tv that I ended up buying a month ago for a good price. At the time I bought the tv I was having problems with my Fire Stick on my old tv. He found out it had a defect in it's software and was able … More"
+    },
+    {
+        "name": "Josh Epperson",
+        "rating": 5,
+        "body": "JJ was very friendly and professional. He went above and beyond. I will definitely be using him in the future!"
+    },
+    {
+        "name": "Francisco Valenzuela",
+        "rating": 5,
+        "body": "The owner is very professional and efficient. He replaced my iPhone's screen in 45 minutes at a good price."
+    },
+    {
+        "name": "Noah Velasco",
+        "rating": 5,
+        "body": "Very excellent service. TV was broken and was fixed in less than 24hr! Highly recommend:)"
+    },
+    {
+        "name": "James Mork",
+        "rating": 5,
+        "body": "I recommend this place 100%. They fixed my son's Nintendo switch. Fast and friendly service. 10 out of 10."
+    },
+    {
+        "name": "Karsen Hindman",
+        "rating": 5,
+        "body": "Did an amazing job fixed my headphones super quick and cheap!"
+    },
+    {
+        "name": "David Bussa",
+        "rating": 5,
+        "body": "Can trust him to fix anything. Was quick and got the job done. Would recommend 100%"
+    },
+    {
+        "name": "Christopher Hill",
+        "rating": 5,
+        "body": "My tv was flickering from dark to bright and I dropped it off and it was fixed on the same day. Excellent service."
+    },
+    {
+        "name": "Adriana Vasser",
+        "rating": 5,
+        "body": "He did a great job on my TV. Definitely will be coming back."
+    },
+    {
+        "name": "Shannon Creason",
+        "rating": 5,
+        "body": "Fixed my kids switch and it's good as new Didn't charge me an arm and a leg."
+    },
+    {
+        "name": "hector grajeda",
+        "rating": 5,
+        "body": "The best of All the technician...JJ very Cuul"
+    },
+    {
+        "name": "Scott Litman",
+        "rating": 5,
+        "body": "JJ COMTECH is the best priced computer repair place. JJ improved the way my computer runs even better than when it was new"
+    },
+    {
+        "name": "Alejandro Jacquez",
+        "rating": 5,
+        "body": "Great service and reasonable price will definetely be back in the future"
+    },
+    {
+        "name": "sylla zaharaou",
+        "rating": 5,
+        "body": "This place is the best place to bring your devices to get fixed , I got my phone back as if it was new in a quick time , Thank Justice .😃"
+    },
+    {
+        "name": "Jennifer Amoah",
+        "rating": 5,
+        "body": "Serviceable well informed, respectful and very knowledgeable of his job and has the patience to explain stuff to customers"
+    },
+    {
+        "name": "Mike Ross",
+        "rating": 5,
+        "body": "Amazing fix! I will absolutely be returning for any future electronic needs."
+    },
+    {
+        "name": "Heather Daves",
+        "rating": 5,
+        "body": "Did a great job fixing are tv! Thank you!"
+    },
+    {
+        "name": "Samantha Laryea",
+        "rating": 5,
+        "body": "He is really good at his job and super fast !!! I highly recommend."
+    },
+    {
+        "name": "Marilyn Makafui",
+        "rating": 5,
+        "body": "Fastest Service and excellent work.. best among all in okc"
+    },
+    {
+        "name": "Miz Bel",
+        "rating": 5,
+        "body": "Fix almost every single Electronic I got.. thanks jay!!🤩"
+    },
+    {
+        "name": "Edward Nortey",
+        "rating": 5,
+        "body": "Helpful and very friendly. ...electronically he is the best so far..."
+    },
+    {
+        "name": "Isaac O",
+        "rating": 5,
+        "body": "Very reliable."
+    },
+    {
+        "name": "Alejandro Reyes",
+        "rating": 5,
+        "body": "Best place to get your electronics fix"
+    },
+    {
+        "name": "Allen Stoliby",
+        "rating": 5,
+        "body": "Did an awesome job."
+    },
+    {
+        "name": "Silas West",
+        "rating": 5,
+        "body": "The best to do it hands down 🤩🤩🤩🔥"
+    },
+    {
+        "name": "evans bortier",
+        "rating": 5,
+        "body": "Fast and service!! Affordable as well"
+    },
+    {
+        "name": "Ursulla Aboagye",
+        "rating": 5,
+        "body": "Master of all electronic...fast services"
+    },
+    {
+        "name": "Jerry Jackson",
+        "rating": 5,
+        "body": "Excellent!!!"
+    },
+    {
+        "name": "Victoria Adeoye",
+        "rating": 5,
+        "body": "Positive: … More"
+    },
+    {
+        "name": "Chad Williamson",
+        "rating": 5,
+        "body": ""
+    },
+    {
+        "name": "Eugene Aboagye",
+        "rating": 5,
+        "body": ""
+    },
+    {
+        "name": "Christian Owusu",
+        "rating": 5,
+        "body": "Business Owner's name is Justice. He's an awesome individual."
+    },
+    {
+        "name": "Vanessa Ford",
+        "rating": 4,
+        "body": "When I called, I spoke to someone named JJ and explained to him that I had a TV that was only getting sound and no picture. He proceeded to tell me what he thought it was and cost. I sent him the name and model #’s to make sure he had the … More"
+    },
+    {
+        "name": "Jeanie Lozano",
+        "rating": 1,
+        "body": "First called this guy and he said it would be $50 to look at the TV ,then when we show up he says $60 and he told us it was the motherboard was bad and it was gonna be close to $400 to fix it ,found another TV guy and found out he never … More"
+    },
+    {
+        "name": "M G",
+        "rating": 1,
+        "body": "Never answers the phone I wouldn’t recommend at all."
+    },
+    {
+        "name": "J W",
+        "rating": 1,
+        "body": "Do not take him anything you value or expect to be working when returned. He charged me $80 to solder 2 chips on a circuit board and burned the board therein rendering it useless. The board isn't replaceable either. He ruined a $12k digital piano with his hack soldering capabilities."
+    },
+    {
+        "name": "Teresa Luna",
+        "rating": 1,
+        "body": "This guy Is a straight rip off took him a TV an said he fixed It an when i get home It wouldnt turn on very bad buisness an he said he wont give me my money back definetly filing a lawsuit 😡"
+    }
+];
 
         const reviewsPerPage = 3;
         let currentIndex = 0;
