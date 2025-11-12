@@ -75,19 +75,31 @@
         }
 
         /* Hero Section */
-        .hero {
-    height: 100vh;
+      html, body {
+    margin: 0;
+    padding: 0;
     width: 100%;
-    min-height: 600px;
-    background: linear-gradient(rgba(29, 67, 50, 0.85), rgba(27, 67, 50, 0.9)), url('https://images.unsplash.com/photo-1581092580496-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: var(--white);
-    padding: 0; /* ← Remove all padding */
-    margin: 0;  /* ← Ensure no margin */
+    overflow-x: hidden; /* Critical: prevents horizontal scroll */
+}
+
+body {
+    box-sizing: border-box;
+}
+
+/* Ensure hero takes exactly viewport width */
+.hero {
+    width: 100vw;           /* Use viewport width */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;       /* Contain any child overflow */
     position: relative;
+}
+
+/* Fix .hero-content padding causing overflow */
+.hero-content {
+    padding: 0 20px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
         .hero h1 {
@@ -103,13 +115,7 @@
             margin-bottom: 32px;
             opacity: 0.95;
         }
-.hero-content {
-    max-width: 800px;
-    width: 100%;
-    padding: 0 20px;
-    margin: 0 auto;
-    z-index: 2;
-}
+
         .cta-button {
             background-color: var(--accent-green);
             color: var(--white);
