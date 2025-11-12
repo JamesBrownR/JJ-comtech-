@@ -3,584 +3,603 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JJ Comtech - Expert Electronics Repair | Oklahoma City</title>
+    <title>JJ Comtech | Professional Electronics Repair - Oklahoma City</title>
+    <meta name="description" content="Expert computer, phone, and electronics repair in Oklahoma City. Fast, reliable service with a satisfaction guarantee.">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Google Fonts: Inter (clean, professional) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            /* Green Professional Palette */
+            --primary-green: #2d6a4f;
+            --dark-green: #1b4332;
+            --light-green: #95d5b2;
+            --accent-green: #52b788;
+            --bg-light: #f8f9fa;
+            --text-dark: #212529;
+            --text-muted: #6c757d;
+            --border-color: #dee2e6;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+            --transition: all 0.3s ease;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --primary-blue: #1a5490;
-            --dark-blue: #0d3a66;
-            --accent-orange: #ff6b35;
-            --light-gray: #f5f5f5;
-            --text-dark: #333333;
-            --text-light: #ffffff;
-        }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             color: var(--text-dark);
-            line-height: 1.6;
+            line-height: 1.7;
+            background-color: var(--bg-light);
         }
 
-        /* Top Phone Bar */
-        .phone-bar {
-            background-color: var(--dark-blue);
-            color: var(--text-light);
-            padding: 12px 20px;
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 10px 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
             text-align: center;
-            font-size: 18px;
-            font-weight: 600;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-sm);
         }
 
-        .phone-bar a {
-            color: var(--text-light);
+        .top-bar a {
+            color: var(--white);
             text-decoration: none;
-            transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
         }
 
-        .phone-bar a:hover {
-            color: var(--accent-orange);
+        .top-bar a:hover {
+            color: var(--light-green);
         }
 
-        /* Hero Section - Full Screen */
+        .top-bar i {
+            font-size: 1.1rem;
+        }
+
+        /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
-              width: 100%;
+            min-height: 600px;
+            background: linear-gradient(rgba(29, 67, 50, 0.85), rgba(27, 67, 50, 0.9)), url('https://images.unsplash.com/photo-1581092580496-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: var(--text-light);
-            padding: 20px;
-            margin-top: 50px;
+            color: var(--white);
+            padding: 0 20px;
+            margin-top: 56px;
             position: relative;
-        }
-
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('JJ-comtech.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0.15;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
         }
 
         .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
+            font-size: 3.5rem;
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
         }
 
         .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            font-size: 1.35rem;
+            max-width: 700px;
+            margin-bottom: 32px;
+            opacity: 0.95;
         }
 
         .cta-button {
-            display: inline-block;
-            background-color: var(--accent-orange);
-            color: var(--text-light);
-            padding: 18px 40px;
-            text-decoration: none;
-            font-size: 1.2rem;
+            background-color: var(--accent-green);
+            color: var(--white);
+            padding: 16px 36px;
+            font-size: 1.1rem;
             font-weight: 600;
-            transition: all 0.3s;
             border: none;
+            border-radius: 8px;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
         }
 
         .cta-button:hover {
-            background-color: #e55a2b;
+            background-color: #40916c;
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 20px rgba(82, 183, 136, 0.3);
         }
 
-        .scroll-indicator {
+        .scroll-hint {
             position: absolute;
             bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--text-light);
-            font-size: 2rem;
+            font-size: 1.8rem;
+            color: var(--white);
+            opacity: 0.7;
             animation: bounce 2s infinite;
         }
 
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-10px); }
-            60% { transform: translateX(-50%) translateY(-5px); }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
-        /* Content Sections */
+        /* Section Styles */
         section {
-            padding: 80px 20px;
+            padding: 90px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        h2 {
-            font-size: 2.5rem;
-            color: var(--primary-blue);
-            margin-bottom: 40px;
+        .section-title {
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: var(--primary-green);
             text-align: center;
-            font-weight: 700;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-green);
+            display: block;
+            margin: 16px auto 0;
+            border-radius: 2px;
         }
 
         /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
         }
 
         .service-card {
-            background: var(--light-gray);
-            padding: 40px 30px;
+            background: var(--white);
+            padding: 36px 28px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
             text-align: center;
-            transition: all 0.3s;
-            border-left: 4px solid var(--primary-blue);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            border-left-color: var(--accent-orange);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--light-green);
+        }
+
+        .service-icon {
+            font-size: 2.8rem;
+            color: var(--accent-green);
+            margin-bottom: 20px;
         }
 
         .service-card h3 {
-            color: var(--primary-blue);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            font-size: 1.4rem;
+            color: var(--primary-green);
+            margin-bottom: 14px;
+            font-weight: 600;
         }
 
-        /* Hours Section */
+        /* Hours */
         .hours-container {
-            background: var(--light-gray);
+            background: var(--white);
             padding: 40px;
-            margin-top: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hours-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            text-align: center;
         }
 
         .day-hours {
-            padding: 15px;
-            background: white;
-            border-left: 3px solid var(--primary-blue);
+            padding: 16px;
+            background: var(--bg-light);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-green);
         }
 
         .day-hours strong {
-            color: var(--primary-blue);
             display: block;
-            margin-bottom: 5px;
+            color: var(--primary-green);
+            font-size: 1.1rem;
+            margin-bottom: 4px;
         }
 
-        /* Reviews Section */
+        .day-hours span {
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Reviews */
         .reviews-container {
-            margin-top: 40px;
+            display: grid;
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .review-card {
-            background: var(--light-gray);
-            padding: 30px;
-            margin-bottom: 20px;
-            border-left: 4px solid var(--accent-orange);
+            background: var(--white);
+            padding: 28px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            border-left: 5px solid var(--accent-green);
         }
 
         .review-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .reviewer-name {
             font-weight: 600;
-            color: var(--primary-blue);
-            font-size: 1.1rem;
+            color: var(--primary-green);
         }
 
         .stars {
-            color: var(--accent-orange);
-            font-size: 1.2rem;
+            color: #ffc107;
+            font-size: 1.1rem;
         }
 
         .review-body {
             color: var(--text-dark);
-            line-height: 1.8;
+            font-style: italic;
+            line-height: 1.7;
         }
 
         .show-more-btn {
             display: block;
-            margin: 30px auto;
-            background-color: var(--primary-blue);
-            color: var(--text-light);
-            padding: 15px 40px;
+            margin: 40px auto 0;
+            background: var(--primary-green);
+            color: var(--white);
             border: none;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s;
+            padding: 14px 32px;
             font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
         }
 
         .show-more-btn:hover {
-            background-color: var(--dark-blue);
+            background: var(--dark-green);
+            transform: translateY(-1px);
         }
 
-        .hidden {
-            display: none;
-        }
-
-        /* Map Section */
+        /* Map */
         .map-container {
-            margin-top: 40px;
             text-align: center;
+            margin-top: 40px;
         }
 
         .map-container iframe {
             width: 100%;
             max-width: 900px;
-            height: 450px;
-            border: 3px solid var(--primary-blue);
+            height: 480px;
+            border: 3px solid var(--primary-green);
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
         }
 
         .map-link {
             display: inline-block;
             margin-top: 20px;
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-size: 1.1rem;
+            color: var(--primary-green);
             font-weight: 600;
+            text-decoration: none;
         }
 
         .map-link:hover {
-            color: var(--accent-orange);
+            color: var(--accent-green);
         }
 
         /* Contact Form */
         .contact-form {
             max-width: 700px;
-            margin: 40px auto;
-            background: var(--light-gray);
+            margin: 50px auto;
+            background: var(--white);
             padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
         }
 
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 24px;
         }
 
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            color: var(--primary-blue);
+            color: var(--primary-green);
             font-weight: 600;
+            font-size: 0.95rem;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            font-size: 1rem;
+            padding: 14px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
             font-family: inherit;
-            transition: border-color 0.3s;
+            font-size: 1rem;
+            transition: var(--transition);
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--primary-blue);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 3px rgba(82, 183, 136, 0.15);
         }
 
         .submit-btn {
-            background-color: var(--accent-orange);
-            color: var(--text-light);
-            padding: 15px 50px;
+            background-color: var(--accent-green);
+            color: white;
+            padding: 16px 40px;
             border: none;
+            border-radius: 8px;
             font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
             width: 100%;
+            transition: var(--transition);
         }
 
         .submit-btn:hover {
-            background-color: #e55a2b;
+            background-color: #40916c;
         }
 
-        /* Square Payment Section */
+        /* Square Payment */
         .square-section {
-            background: var(--light-gray);
-            padding: 60px 20px;
+            background: linear-gradient(135deg, var(--light-green) 0%, var(--accent-green) 100%);
+            color: var(--dark-green);
             text-align: center;
+            padding: 70px 20px;
+            border-radius: 16px;
+            margin: 60px 20px;
+        }
+
+        .square-section h2 {
+            color: var(--white);
+            margin-bottom: 16px;
         }
 
         .square-link {
             display: inline-block;
-            background-color: var(--primary-blue);
-            color: var(--text-light);
-            padding: 20px 50px;
-            text-decoration: none;
-            font-size: 1.2rem;
+            background: var(--white);
+            color: var(--primary-green);
+            padding: 18px 48px;
+            border-radius: 50px;
             font-weight: 600;
-            transition: all 0.3s;
+            text-decoration: none;
             margin-top: 20px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
         }
 
         .square-link:hover {
-            background-color: var(--dark-blue);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
         /* Social Links */
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
             margin-top: 40px;
             flex-wrap: wrap;
         }
 
         .social-link {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: var(--primary-blue);
-            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--white);
+            color: var(--primary-green);
+            padding: 14px 28px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
         }
 
         .social-link:hover {
-            background-color: var(--accent-orange);
+            background: var(--accent-green);
+            color: white;
             transform: translateY(-2px);
         }
 
         /* Footer */
         footer {
-            background-color: var(--dark-blue);
-            color: var(--text-light);
+            background-color: var(--dark-green);
+            color: var(--white);
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
+            margin-top: 80px;
         }
 
-        footer p {
-            margin-bottom: 10px;
+        footer a {
+            color: var(--light-green);
+            text-decoration: none;
         }
 
-        /* Responsive Design */
+        footer a:hover {
+            color: white;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            .phone-bar {
-                font-size: 16px;
-                padding: 10px;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .map-container iframe {
-                height: 300px;
-            }
+            .hero h1 { font-size: 2.6rem; }
+            .hero p { font-size: 1.15rem; }
+            .section-title { font-size: 2rem; }
+            section { padding: 70px 20px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .hours-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .cta-button {
-                padding: 15px 30px;
-                font-size: 1rem;
-            }
+            .hero h1 { font-size: 2.2rem; }
+            .top-bar { font-size: 0.9rem; padding: 8px; }
+            .cta-button { padding: 14px 28px; font-size: 1rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Top Phone Bar -->
-    <div class="phone-bar">
-        <a href="tel:+14056331727">📞 (405) 633-1727 - Call Now</a>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <a href="tel:+14056331727"><i class="fas fa-phone"></i> (405) 633-1727</a>
     </div>
 
-    <!-- Hero Section - Full Screen -->
+    <!-- Hero -->
     <section class="hero">
-        <div class="hero-background"></div>
-        <div class="hero-content">
-            <h1>JJ COMTECH</h1>
-            <p>Expert Electronics Repair & Technology Solutions</p>
-            <a href="#contact" class="cta-button">Get Your Free Quote</a>
-        </div>
-        <div class="scroll-indicator">↓</div>
+        <h1>JJ Comtech</h1>
+        <p>Professional Electronics Repair & IT Solutions in Oklahoma City</p>
+        <a href="#contact" class="cta-button"><i class="fas fa-envelope"></i> Get Free Quote</a>
+        <div class="scroll-hint">↓</div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services -->
     <section id="services">
-        <h2>Our Services</h2>
+        <h2 class="section-title">Our Professional Services</h2>
         <div class="services-grid">
             <div class="service-card">
+                <div class="service-icon"><i class="fas fa-laptop"></i></div>
                 <h3>Computer Repair</h3>
-                <p>Expert diagnostics and repairs for all computer issues. Fast turnaround times guaranteed.</p>
+                <p>Expert diagnostics, virus removal, hardware upgrades, and OS reinstallation with fast turnaround.</p>
             </div>
             <div class="service-card">
-                <h3>Phone Repair</h3>
-                <p>Screen replacements, battery repairs, and more for all smartphone models.</p>
+                <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Phone & Tablet Repair</h3>
+                <p>Screen replacement, battery issues, charging ports, and water damage recovery.</p>
             </div>
             <div class="service-card">
+                <div class="service-icon"><i class="fas fa-hdd"></i></div>
                 <h3>Data Recovery</h3>
-                <p>Professional data recovery services to retrieve your important files and documents.</p>
+                <p>Advanced recovery from failed drives, deleted files, and corrupted storage devices.</p>
             </div>
             <div class="service-card">
+                <div class="service-icon"><i class="fas fa-tools"></i></div>
                 <h3>Electronics Repair</h3>
-                <p>Comprehensive repair services for tablets, laptops, and other electronic devices.</p>
+                <p>Laptops, gaming consoles, drones, and specialty devices — we fix it all.</p>
             </div>
             <div class="service-card">
+                <div class="service-icon"><i class="fas fa-headset"></i></div>
                 <h3>Tech Support</h3>
-                <p>Expert technical support and consultation for all your technology needs.</p>
+                <p>Remote assistance, software setup, network configuration, and training.</p>
             </div>
             <div class="service-card">
+                <div class="service-icon"><i class="fas fa-cogs"></i></div>
                 <h3>Custom Solutions</h3>
-                <p>Tailored technology solutions designed specifically for your requirements.</p>
+                <p>Business IT setups, smart home integration, and tailored tech consulting.</p>
             </div>
         </div>
     </section>
 
-    <!-- Hours Section -->
+    <!-- Hours -->
     <section id="hours">
-        <h2>Business Hours</h2>
+        <h2 class="section-title">Business Hours</h2>
         <div class="hours-container">
             <div class="hours-grid">
-                <div class="day-hours">
-                    <strong>Monday</strong>
-                    <span>11 AM – 8 PM</span>
-                </div>
-                <div class="day-hours">
-                    <strong>Tuesday</strong>
-                    <span>11 AM – 8 PM</span>
-                </div>
-                <div class="day-hours">
-                    <strong>Wednesday</strong>
-                    <span>11 AM – 8 PM</span>
-                </div>
-                <div class="day-hours">
-                    <strong>Thursday</strong>
-                    <span>11 AM – 8 PM</span>
-                </div>
-                <div class="day-hours">
-                    <strong>Friday</strong>
-                    <span>11 AM – 8 PM</span>
-                </div>
-                <div class="day-hours">
-                    <strong>Saturday</strong>
-                    <span>11 AM – 8 PM</span>
-                </div>
-                <div class="day-hours">
-                    <strong>Sunday</strong>
-                    <span>Closed</span>
-                </div>
+                <div class="day-hours"><strong>Monday</strong><span>11 AM – 8 PM</span></div>
+                <div class="day-hours"><strong>Tuesday</strong><span>11 AM – 8 PM</span></div>
+                <div class="day-hours"><strong>Wednesday</strong><span>11 AM – 8 PM</span></div>
+                <div class="day-hours"><strong>Thursday</strong><span>11 AM – 8 PM</span></div>
+                <div class="day-hours"><strong>Friday</strong><span>11 AM – 8 PM</span></div>
+                <div class="day-hours"><strong>Saturday</strong><span>11 AM – 8 PM</span></div>
+                <div class="day-hours"><strong>Sunday</strong><span>Closed</span></div>
             </div>
         </div>
     </section>
 
-    <!-- Reviews Section -->
+    <!-- Reviews -->
     <section id="reviews">
-        <h2>Customer Reviews</h2>
+        <h2 class="section-title">Customer Reviews</h2>
         <div class="reviews-container" id="reviewsContainer"></div>
         <button class="show-more-btn" id="showMoreBtn" style="display: none;">Show More Reviews</button>
     </section>
 
-    <!-- Square Payment Section -->
+    <!-- Square Payment -->
     <section class="square-section">
-        <h2>Pay Online</h2>
-        <p>Convenient and secure online payment options available</p>
-        <a href="https://squareup.com/appointments/book/YOUR_LOCATION_ID" class="square-link" target="_blank">Pay with Square</a>
-        <p style="margin-top: 20px; color: #666; font-size: 0.9rem;">Replace YOUR_LOCATION_ID in the code with your actual Square location ID</p>
+        <h2>Secure Online Payment</h2>
+        <p>Pay for services quickly and securely with Square</p>
+        <a href="https://squareup.com/appointments/book/YOUR_LOCATION_ID" class="square-link" target="_blank">
+            Pay with Square
+        </a>
+        <p style="margin-top: 16px; font-size: 0.9rem; opacity: 0.9;">
+            Replace YOUR_LOCATION_ID with your actual Square ID
+        </p>
     </section>
 
-    <!-- Location Section -->
+    <!-- Location -->
     <section id="location">
-        <h2>Visit Us</h2>
-        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 20px;">
+        <h2 class="section-title">Visit Our Shop</h2>
+        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 30px; color: var(--text-muted);">
             <strong>1549 SW 44th St, Oklahoma City, OK 73119</strong>
         </p>
         <div class="map-container">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3251.364732886996!2d-97.54779678850399!3d35.420993872558356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b2115e37770f47%3A0x4101620913bc51f4!2sJJ%20comtech!5e0!3m2!1sen!2sus!4v1762308303875!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <br>
-            <a href="https://www.google.com/maps/place/JJ+comtech/@35.4209939,-97.5477968,17z/data=!4m16!1m9!3m8!1s0x87b2115e37770f47:0x4101620913bc51f4!2sJJ+comtech!8m2!3d35.4209939!4d-97.5452165!9m1!1b1!16s%2Fg%2F11c75th2x7!3m5!1s0x87b2115e37770f47:0x4101620913bc51f4!8m2!3d35.4209939!4d-97.5452165!16s%2Fg%2F11c75th2x7?entry=ttu&g_ep=EgoyMDI1MTEwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-link">View on Google Maps →</a>
+            <a href="https://g.page/jjcomtech?share" target="_blank" class="map-link">Open in Google Maps →</a>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
+    <!-- Contact Form -->
     <section id="contact">
-        <h2>Contact Us</h2>
+        <h2 class="section-title">Get In Touch</h2>
         <form class="contact-form" id="contactForm">
             <div class="form-group">
                 <label for="name">Full Name *</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" required>
             </div>
             <div class="form-group">
                 <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" required>
             </div>
             <div class="form-group">
                 <label for="phone">Phone Number *</label>
-                <input type="tel" id="phone" name="phone" required>
+                <input type="tel" id="phone" required>
             </div>
             <div class="form-group">
                 <label for="service">Service Needed</label>
-                <input type="text" id="service" name="service" placeholder="e.g., Computer Repair, Phone Screen">
+                <input type="text" id="service" placeholder="e.g., iPhone screen replacement">
             </div>
             <div class="form-group">
                 <label for="message">Message *</label>
-                <textarea id="message" name="message" required placeholder="Tell us about your repair needs..."></textarea>
+                <textarea id="message" required placeholder="Describe your issue or request..."></textarea>
             </div>
             <button type="submit" class="submit-btn">Send Message</button>
         </form>
@@ -588,10 +607,14 @@
 
     <!-- Social Links -->
     <section>
-        <h2>Connect With Us</h2>
+        <h2 class="section-title">Connect With Us</h2>
         <div class="social-links">
-            <a href="https://www.instagram.com/jjcomtech2/" target="_blank" class="social-link">Instagram</a>
-            <a href="https://www.chamberofcommerce.com/business-directory/oklahoma/oklahoma-city/electronics-repair-shop/2013642675-jj-comtech" target="_blank" class="social-link">Chamber of Commerce</a>
+            <a href="https://www.instagram.com/jjcomtech2/" target="_blank" class="social-link">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.chamberofcommerce.com/business-directory/oklahoma/oklahoma-city/electronics-repair-shop/2013642675-jj-comtech" target="_blank" class="social-link">
+                <i class="fas fa-building"></i> Chamber of Commerce
+            </a>
         </div>
     </section>
 
@@ -599,97 +622,87 @@
     <footer>
         <p><strong>JJ Comtech</strong></p>
         <p>1549 SW 44th St, Oklahoma City, OK 73119</p>
-        <p><a href="tel:+14056331727" style="color: var(--text-light); text-decoration: none;">(405) 633-1727</a></p>
-        <p style="margin-top: 20px;">&copy; 2025 JJ Comtech. All rights reserved.</p>
+        <p><a href="tel:+14056331727">(405) 633-1727</a></p>
+        <p style="margin-top: 24px; font-size: 0.9rem; opacity: 0.8;">
+            &copy; 2025 JJ Comtech. All rights reserved.
+        </p>
     </footer>
 
     <script>
-        // Reviews Data - EASILY ADD MORE REVIEWS HERE
+        // Sample Reviews (Replace with real ones)
         const reviews = [
-            { name: "Customer 1", rating: 5, body: "" },
-            { name: "Customer 2", rating: 5, body: "" },
-            { name: "Customer 3", rating: 5, body: "" },
-            { name: "Customer 4", rating: 5, body: "" },
-            { name: "Customer 5", rating: 5, body: "" },
-            { name: "Customer 6", rating: 5, body: "" }
+            { name: "Sarah M.", rating: 5, body: "Fixed my MacBook in under 2 hours! Professional and affordable." },
+            { name: "James T.", rating: 5, body: "Recovered all my family photos from a dead hard drive. Lifesavers!" },
+            { name: "Maria L.", rating: 5, body: "Best phone repair in OKC. New screen looks perfect." },
+            { name: "Robert K.", rating: 5, body: "Great customer service and honest pricing. Highly recommend." },
+            { name: "Emily R.", rating: 5, body: "They fixed my gaming PC and optimized it. Runs better than new!" },
+            { name: "David P.", rating: 5, body: "Fast, friendly, and professional. Will definitely return." }
         ];
 
-        const reviewsPerPage = 6;
-        let currentReviewIndex = 0;
+        const reviewsPerPage = 3;
+        let currentIndex = 0;
 
-        function displayReviews(startIndex, count) {
+        function renderReviews(start, count) {
             const container = document.getElementById('reviewsContainer');
-            const endIndex = Math.min(startIndex + count, reviews.length);
+            const end = Math.min(start + count, reviews.length);
 
-            for (let i = startIndex; i < endIndex; i++) {
-                const review = reviews[i];
-                const reviewCard = document.createElement('div');
-                reviewCard.className = 'review-card';
-                
-                const stars = '★'.repeat(review.rating);
-                
-                reviewCard.innerHTML = `
+            for (let i = start; i < end; i++) {
+                const r = reviews[i];
+                const card = document.createElement('div');
+                card.className = 'review-card';
+                card.innerHTML = `
                     <div class="review-header">
-                        <div class="reviewer-name">${review.name}</div>
-                        <div class="stars">${stars}</div>
+                        <div class="reviewer-name">${r.name}</div>
+                        <div class="stars">${'★'.repeat(r.rating)}</div>
                     </div>
-                    ${review.body ? `<div class="review-body">${review.body}</div>` : ''}
+                    <div class="review-body">"${r.body}"</div>
                 `;
-                
-                container.appendChild(reviewCard);
+                container.appendChild(card);
             }
 
-            currentReviewIndex = endIndex;
-
-            const remainingReviews = reviews.length - currentReviewIndex;
-            const showMoreBtn = document.getElementById('showMoreBtn');
-            
-            if (remainingReviews > 0) {
-                showMoreBtn.style.display = 'block';
-                const nextBatch = Math.min(remainingReviews, reviewsPerPage);
-                showMoreBtn.textContent = `Show ${nextBatch} More Review${nextBatch > 1 ? 's' : ''} (Total ${remainingReviews})`;
+            currentIndex = end;
+            const btn = document.getElementById('showMoreBtn');
+            if (currentIndex >= reviews.length) {
+                btn.style.display = 'none';
             } else {
-                showMoreBtn.style.display = 'none';
+                btn.style.display = 'block';
+                const remaining = reviews.length - currentIndex;
+                btn.textContent = `Show ${Math.min(remaining, reviewsPerPage)} More Review${remaining > 1 ? 's' : ''}`;
             }
         }
 
-        document.getElementById('showMoreBtn').addEventListener('click', function() {
-            displayReviews(currentReviewIndex, reviewsPerPage);
+        document.getElementById('showMoreBtn').addEventListener('click', () => {
+            renderReviews(currentIndex, reviewsPerPage);
         });
 
-        displayReviews(0, reviewsPerPage);
+        // Initial load
+        renderReviews(0, reviewsPerPage);
 
-        // Contact Form Handler
+        // Contact Form
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                service: document.getElementById('service').value,
-                message: document.getElementById('message').value
+            const data = {
+                name: this.name.value,
+                email: this.email.value,
+                phone: this.phone.value,
+                service: this.service.value,
+                message: this.message.value
             };
 
-            const subject = encodeURIComponent('New Contact Form Submission - JJ Comtech');
+            const subject = encodeURIComponent('JJ Comtech - New Service Request');
             const body = encodeURIComponent(
-                `Name: ${formData.name}\n` +
-                `Email: ${formData.email}\n` +
-                `Phone: ${formData.phone}\n` +
-                `Service: ${formData.service}\n\n` +
-                `Message:\n${formData.message}`
+                `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\nService: ${data.service}\n\nMessage:\n${data.message}`
             );
 
-            window.location.href = `mailto:your-email@example.com?subject=${subject}&body=${body}`;
-            
-            alert('Thank you for contacting us! Your default email client will open to send the message.');
+            window.location.href = `mailto:your-email@jjcomtech.com?subject=${subject}&body=${body}`;
+            alert('Opening your email client...');
         });
 
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(a.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
